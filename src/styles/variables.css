@@ -3,7 +3,7 @@
 :root {
 	/** COLORS **/
 	--main-light: #f9e7e7;
-	--main-dark: rgb(25, 19, 8);
+	--main-dark: #2f2f2f;
 	--text-color: rgb(253, 255, 252);
 	--ml-dark: rgb(115, 33, 129);
 	--ml-light: rgb(98, 170, 71);

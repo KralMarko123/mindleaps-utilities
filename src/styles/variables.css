@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Oswald:wght@400;700&display=swap');
+
+:root {
+	/** COLORS **/
+	--main-light: #f9e7e7;
+	--main-dark: rgb(25, 19, 8);
+	--text-color: rgb(253, 255, 252);
+	--ml-dark: rgb(115, 33, 129);
+	--ml-light: rgb(98, 170, 71);
+
+	/** TEXT **/
+	--base-font-size: 18px;
+	--main-font: 'Lato', sans-serif;
+	--secondary-font: 'Oswald', sans-serif;
+
+	/** UTILITY **/
+	--simple-shadow: 5px 5px 5px rgba(25, 19, 8, 0.5);
+	--small-shadow: 0px 5px 5px 0px rgba(25, 19, 8, 0.75);
+}

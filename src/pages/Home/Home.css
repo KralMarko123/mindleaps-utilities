@@ -1,0 +1,43 @@
+.button-container {
+	width: 50%;
+
+	padding: 2em;
+	border: solid 2px var(--text-color);
+	border-radius: 10px;
+
+	display: flex;
+	flex-direction: column;
+	gap: 2em;
+}
+
+.button {
+	width: 100%;
+	outline: none;
+	border: none;
+	background-color: var(--accent);
+	color: var(--text-color);
+	padding: 0.5em;
+	border-radius: 10px;
+
+	box-shadow: var(--simple-shadow);
+
+	font-size: 2rem;
+	font-weight: bold;
+	font-family: var(--secondary-font);
+	text-transform: uppercase;
+
+	cursor: pointer;
+	transition: all 0.25s ease-in-out;
+}
+
+/* .button:first-of-type {
+	transform: translateX(-80px);
+} */
+
+.button:first-of-type:hover {
+	transform: translateX(-80px);
+}
+
+.button:last-of-type:hover {
+	transform: translateX(80px);
+}

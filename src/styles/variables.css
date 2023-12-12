@@ -7,11 +7,13 @@
 	--text-color: rgb(253, 255, 252);
 	--ml-dark: rgb(115, 33, 129);
 	--ml-light: rgb(98, 170, 71);
+	--accent: #3083dc;
 
 	/** TEXT **/
 	--base-font-size: 18px;
 	--main-font: 'Lato', sans-serif;
 	--secondary-font: 'Oswald', sans-serif;
+	--xl-text: 3rem;
 
 	/** UTILITY **/
 	--simple-shadow: 5px 5px 5px rgba(25, 19, 8, 0.5);

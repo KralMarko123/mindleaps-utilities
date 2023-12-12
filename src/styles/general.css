@@ -1,0 +1,24 @@
+.title {
+	font-family: var(--secondary-font);
+	font-size: var(--xl-text);
+	font-weight: bold;
+}
+
+.title span:first-of-type {
+	color: var(--ml-dark);
+}
+.title span:last-of-type {
+	color: var(--ml-light);
+}
+
+.desc {
+	font-size: 0.85rem;
+	opacity: 0.5;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+
+	padding: 2em;
+	background-color: black;
+	border-radius: 5px;
+	box-shadow: var(--small-shadow);
+}

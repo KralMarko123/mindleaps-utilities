@@ -1,0 +1,19 @@
+.button {
+	width: 100%;
+	outline: none;
+	padding: 0.5em;
+
+	border: none;
+	border-radius: 10px;
+	background-color: var(--accent);
+	box-shadow: var(--simple-shadow);
+
+	color: var(--text-color);
+	font-size: var(--lg-text);
+	font-weight: bold;
+	font-family: var(--secondary-font);
+	text-transform: uppercase;
+
+	cursor: pointer;
+	transition: all 0.25s ease-in-out;
+}

@@ -1,40 +1,14 @@
-.link-container {
-	position: relative;
-
-	padding: 1em 3em;
-	display: flex;
-	align-items: center;
-	gap: 2em;
-	background-color: var(--accent);
-
-	border-top-right-radius: 50px;
-	border-bottom-left-radius: 50px;
-	overflow: hidden;
+.page {
+	justify-content: start;
 }
 
-.link-icon {
-	position: absolute;
-	left: 0;
-	width: 30%;
-	height: 100%;
-	background-color: var(--text-color);
-	display: flex;
-	justify-content: center;
-	align-items: center;
+.links-dashboard {
+	width: 80%;
 
-	border-top-right-radius: 50px;
-	border-bottom-left-radius: 50px;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-auto-rows: fit-content;
+	grid-gap: 2em;
 }
 
-.link-icon svg {
-	font-size: 3rem;
-	color: black;
-}
 
-.link-title {
-	font-size: 1.5rem;
-	padding: 1em;
-	text-align: center;
-
-  transform: translateX(20%);
-}

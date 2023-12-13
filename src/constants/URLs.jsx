@@ -4,5 +4,6 @@ export const URLs = {
 	QUARTERLY_PERFORMANCE_EVALUATIONS:
 		'https://docs.google.com/forms/d/e/1FAIpQLSchizSGR2dwfuXmQRclXNRQUHsNZtEx48eI4ro_hQwAwtYOXQ/viewform',
 	MINDLEAPS_WEBSITE: 'https://mindleaps.org',
-	FOUNDATIONAL_SKILLS: 'https://kralmarko123.github.io/mindleaps-skills/'
+	FOUNDATIONAL_SKILLS: 'https://kralmarko123.github.io/mindleaps-skills/',
+	MINDLEAPS_TRACKER: 'https://mindleapstracker.org/'
 };

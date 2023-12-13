@@ -1,4 +1,5 @@
 export const ROUTES = {
 	HOME: '/',
-	LINKS: '/usefulLinks'
+	LINKS: '/usefulLinks',
+	REPORT: '/report'
 };

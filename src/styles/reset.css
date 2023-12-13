@@ -35,3 +35,7 @@ img {
 	max-width: 100%;
 	height: auto;
 }
+
+input {
+	font-family: var(--main-font);
+}

@@ -21,7 +21,7 @@ const Home = () => {
 
 			<div className='menu-container'>
 				<Button text={'Useful Links'} executeOnClick={() => navigate(ROUTES.LINKS)} />
-				<Button text={'Class report generator'} />
+				<Button text={'Class report generator'} executeOnClick={() => navigate(ROUTES.REPORT)} />
 			</div>
 		</div>
 	);

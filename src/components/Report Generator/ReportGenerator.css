@@ -1,0 +1,100 @@
+.report-form {
+	margin-top: 100px;
+	width: 50%;
+}
+
+.report-input {
+	position: relative;
+}
+
+.report-input:after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	display: block;
+	height: 5px;
+	width: 100%;
+
+	background: -webkit-linear-gradient(
+		left,
+		var(--ml-dark) 0%,
+		var(--ml-light) 50%,
+		var(--ml-dark) 100%
+	);
+	border-radius: 10px;
+
+	transition: all 0.5s ease-in-out;
+}
+
+.report-placeholder {
+	position: absolute;
+	font-size: var(--lg-text);
+	bottom: 0.25em;
+	left: 0.25em;
+
+	opacity: 0.75;
+	transition: all 0.5s ease-in-out;
+}
+
+.report-input.open .report-placeholder {
+	transform: scale(0.35) translate(-100%, -200%);
+	color: var(--ml-light);
+}
+
+.report-placeholder.active {
+	transform: scale(0.35) translate(-100%, -200%);
+}
+
+.report-input input {
+	font-size: var(--lg-text);
+	color: var(--text-color);
+
+	width: 100%;
+	height: 100%;
+	padding: 0.25em 0.25em;
+
+	outline: none;
+	border: none;
+	background-color: transparent;
+}
+
+.report-submit {
+	position: absolute;
+	right: 0.5em;
+	bottom: 0.5em;
+
+	width: 50px;
+	height: 50px;
+	border: solid 2px;
+	border-radius: 50%;
+
+	font-size: var(--lg-text);
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	opacity: 0.75;
+	cursor: pointer;
+	transition: all 0.5s ease-in-out;
+}
+
+.report-submit:hover {
+	border-color: var(--ml-light);
+	color: var(--ml-light);
+}
+
+.report-error {
+	position: absolute;
+	left: 0.25;
+	bottom: -50%;
+
+	color: var(--danger);
+
+	opacity: 0;
+	transition: all 0.25s ease-in-out;
+}
+
+.report-error.show {
+	opacity: 0.75;
+}

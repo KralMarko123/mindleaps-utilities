@@ -21,7 +21,7 @@ const Title = ({ onEnter }) => {
 		}
 
 		setError(false);
-		onEnter(title);
+		onEnter('title', title);
 	};
 
 	return (

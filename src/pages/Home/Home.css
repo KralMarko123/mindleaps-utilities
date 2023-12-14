@@ -14,10 +14,6 @@
 	gap: 2em;
 }
 
-.menu-container .button:first-of-type:hover {
-	transform: translateX(-80px);
-}
-
-.menu-container .button:last-of-type:hover {
-	transform: translateX(80px);
+.menu-container .button:hover {
+	transform: translateX(-50px);
 }

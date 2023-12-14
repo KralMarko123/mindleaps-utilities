@@ -14,7 +14,7 @@ const Links = () => {
 
 			<div className='links-dashboard'>
 				{LINKS.map((l) => (
-					<ButtonLink title={l.title} icon={l.icon} url={l.url} />
+					<ButtonLink key={l.url} title={l.title} icon={l.icon} url={l.url} />
 				))}
 			</div>
 		</div>

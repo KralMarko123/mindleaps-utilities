@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Title from './Title';
-import Date from './Date';
+import DateSelection from './DateSelection';
 import './ReportGenerator.css';
 
 const ReportGenerator = () => {
@@ -18,11 +18,11 @@ const ReportGenerator = () => {
 
 	return (
 		<div className='report-form'>
-			{!reportState.title && <Title onEnter={(key, value) => handleReportFormSubmit(key, value)} />}
+			{/* {!reportState.title && <Title onEnter={(key, value) => handleReportFormSubmit(key, value)} />}
 
-			{reportState.title && !reportState.date && (
-				<Date onEnter={(key, value) => handleReportFormSubmit(key, value)} />
-			)}
+			{reportState.title && !reportState.date && ( */}
+			<DateSelection onEnter={(key, value) => handleReportFormSubmit(key, value)} />
+			{/* )} */}
 		</div>
 	);
 };

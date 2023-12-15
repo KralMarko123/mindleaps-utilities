@@ -1,0 +1,25 @@
+.report-placeholder.active {
+	color: var(--ml-light);
+}
+
+.group-form {
+	display: flex;
+	flex-direction: column;
+	gap: 3em;
+}
+
+.groups-container {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 1em;
+}
+
+.group-badge {
+	width: fit-content;
+}
+
+.group-badge:hover {
+	transform: translateY(-10%);
+	opacity: 0.9;
+}

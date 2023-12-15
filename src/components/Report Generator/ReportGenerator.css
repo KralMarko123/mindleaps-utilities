@@ -28,12 +28,14 @@
 
 .report-placeholder {
 	position: absolute;
-	font-size: var(--lg-text);
 	bottom: 0.25em;
 	left: 0.25em;
 
+	color: var(--text-color);
+	font-size: var(--lg-text);
+
 	opacity: 0.75;
-	transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;	
 }
 
 .report-input.open .report-placeholder {

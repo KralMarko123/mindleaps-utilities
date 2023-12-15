@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { TbArrowRight } from 'react-icons/tb';
-import './ReportGenerator.css';
 import './Title.css';
 
 const Title = ({ onEnter }) => {

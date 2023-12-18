@@ -1,0 +1,9 @@
+.actionitem-container {
+	flex-direction: column;
+}
+
+.actionitem-badge {
+	width: 100%;
+	font-size: var(--md-text);
+	text-align: start;
+}

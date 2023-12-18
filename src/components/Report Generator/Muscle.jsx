@@ -1,43 +1,43 @@
 import React, { useState } from 'react';
 import { TbArrowRight } from 'react-icons/tb';
 
-const Title = ({ onEnter }) => {
+const Muscle = ({ onEnter }) => {
 	const [isOpen, setIsOpen] = useState(false);
-	const [title, setTitle] = useState('');
+	const [muscle, setMuscle] = useState('');
 	const [error, setError] = useState(false);
 
 	const handleInputChange = (e) => {
-		const newTitle = e.currentTarget.value;
+		const newMuscle = e.currentTarget.value;
 
-		setTitle((prev) => newTitle);
+		setMuscle((prev) => newMuscle);
 	};
 
 	const handleSubmit = () => {
-		if (title.length === 0) {
+		if (muscle.length === 0) {
 			setError(true);
 			return;
 		}
 
 		setError(false);
-		onEnter('title', title);
+		onEnter('muscle', muscle);
 	};
 
 	return (
-		<div className='title-form'>
+		<div className='muscle-form'>
 			<div
 				className={`report-input${isOpen ? ' open' : ''}`}
 				onFocus={() => setIsOpen(true)}
 				onBlur={() => setIsOpen(false)}
 			>
-				<span className={`report-placeholder${title.length > 0 ? ' active' : ''}`}>Title</span>
+				<span className={`report-placeholder${muscle.length > 0 ? ' active' : ''}`}>Muscle</span>
 				<input type='text' onChange={(e) => handleInputChange(e)} />
 				<span className={`report-submit`} onClick={() => handleSubmit()}>
 					<TbArrowRight />
 				</span>
-				<p className={`report-error${error ? ' show' : ''}`}>Please enter a title</p>
+				<p className={`report-error${error ? ' show' : ''}`}>Please enter a muscle</p>
 			</div>
 		</div>
 	);
 };
 
-export default Title;
+export default Muscle;

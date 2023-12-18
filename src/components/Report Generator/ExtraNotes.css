@@ -1,0 +1,9 @@
+.note-container {
+	flex-direction: column;
+}
+
+.note-badge {
+	width: 100%;
+	font-size: var(--md-text);
+	text-align: start;
+}

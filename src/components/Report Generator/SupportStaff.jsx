@@ -7,6 +7,7 @@ const SupportStaff = ({ onEnter }) => {
 	const supportRef = useRef();
 	const [isOpen, setIsOpen] = useState(false);
 	const [support, setSupport] = useState([]);
+	const [error, setError] = useState(false);
 
 	const handleSubmit = () => {
 		onEnter('support', support);
@@ -15,8 +16,12 @@ const SupportStaff = ({ onEnter }) => {
 	const handleAdd = () => {
 		const supportToBeAdded = supportRef.current.value;
 
-		if (supportToBeAdded.length === 0) return;
+		if (supportToBeAdded.length === 0) {
+			setError(true);
+			return;
+		}
 
+		setError(false);
 		setSupport([...support, supportToBeAdded]);
 		supportRef.current.value = '';
 	};
@@ -45,6 +50,8 @@ const SupportStaff = ({ onEnter }) => {
 				<span className={`report-submit`} onClick={() => handleSubmit()}>
 					<TbArrowRight />
 				</span>
+
+				<p className={`report-error${error ? ' show' : ''}`}>Please enter a support member</p>
 			</div>
 
 			<div className='badge-container'>

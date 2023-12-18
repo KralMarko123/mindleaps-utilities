@@ -8,19 +8,31 @@ import Teachers from './Teachers';
 import SupportStaff from './SupportStaff';
 import Attendance from './Attendance';
 import Missing from './Missing';
+import Subject from './Subject';
+import Skill from './Skill';
+import Muscle from './Muscle';
+import Technique from './Technique';
+import ExtraNotes from './ExtraNotes';
+import ActionItems from './ActionItems';
 import './ReportGenerator.css';
 
 const ReportGenerator = () => {
 	const [reportState, setReportState] = useState({
-		title: 1,
-		date: 1,
-		group: 1,
-		startTime: 1,
-		endTime: 1,
-		teachers: 1,
-		support: 1,
-		attendance: 1,
-		missing: null
+		title: null,
+		date: null,
+		group: null,
+		startTime: null,
+		endTime: null,
+		teachers: null,
+		support: null,
+		attendance: null,
+		missing: null,
+		subject: null,
+		skill: null,
+		muscle: null,
+		technique: null,
+		notes: null,
+		actionItems: null
 	});
 
 	const handleReportFormSubmit = (key, value) => {
@@ -65,6 +77,32 @@ const ReportGenerator = () => {
 			{reportState.attendance && !reportState.missing && (
 				<Missing onEnter={(key, value) => handleReportFormSubmit(key, value)} />
 			)}
+
+			{reportState.missing && !reportState.subject && (
+				<Subject onEnter={(key, value) => handleReportFormSubmit(key, value)} />
+			)}
+
+			{reportState.subject && !reportState.skill && (
+				<Skill onEnter={(key, value) => handleReportFormSubmit(key, value)} />
+			)}
+
+			{reportState.skill && !reportState.muscle && (
+				<Muscle onEnter={(key, value) => handleReportFormSubmit(key, value)} />
+			)}
+
+			{reportState.muscle && !reportState.technique && (
+				<Technique onEnter={(key, value) => handleReportFormSubmit(key, value)} />
+			)}
+
+			{reportState.technique && !reportState.notes && (
+				<ExtraNotes onEnter={(key, value) => handleReportFormSubmit(key, value)} />
+			)}
+
+			{reportState.notes && !reportState.actionItems && (
+				<ActionItems onEnter={(key, value) => handleReportFormSubmit(key, value)} />
+			)}
+
+			{Object.values(reportState).every((v) => v != null) && <div>something here</div>}
 		</div>
 	);
 };

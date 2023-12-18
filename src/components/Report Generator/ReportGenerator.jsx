@@ -16,7 +16,7 @@ import ExtraNotes from './ExtraNotes';
 import ActionItems from './ActionItems';
 import './ReportGenerator.css';
 
-const ReportGenerator = () => {
+const ReportGenerator = ({ onSubmit }) => {
 	const [reportState, setReportState] = useState({
 		title: null,
 		date: null,
@@ -40,6 +40,9 @@ const ReportGenerator = () => {
 		newReportState[`${key}`] = value;
 
 		setReportState({ ...newReportState });
+		if (Object.values(reportState).every((v) => v != null)) {
+			onSubmit(reportState);
+		}
 	};
 
 	return (
@@ -101,8 +104,6 @@ const ReportGenerator = () => {
 			{reportState.notes && !reportState.actionItems && (
 				<ActionItems onEnter={(key, value) => handleReportFormSubmit(key, value)} />
 			)}
-
-			{Object.values(reportState).every((v) => v != null) && <div>something here</div>}
 		</div>
 	);
 };

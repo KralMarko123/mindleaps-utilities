@@ -4,15 +4,21 @@ import DateSelection from './DateSelection';
 import Group from './Group';
 import StartTime from './StartTime';
 import EndTime from './EndTime';
+import Teachers from './Teachers';
+import SupportStaff from './SupportStaff';
+import Attendance from './Attendance';
 import './ReportGenerator.css';
 
 const ReportGenerator = () => {
 	const [reportState, setReportState] = useState({
-		title: 1,
-		date: 1,
-		group: 1,
+		title: null,
+		date: null,
+		group: null,
 		startTime: null,
-		endTime: null
+		endTime: null,
+		teachers: null,
+		support: null,
+		attendance: null
 	});
 
 	const handleReportFormSubmit = (key, value) => {
@@ -40,6 +46,18 @@ const ReportGenerator = () => {
 
 			{reportState.startTime && !reportState.endTime && (
 				<EndTime onEnter={(key, value) => handleReportFormSubmit(key, value)} />
+			)}
+
+			{reportState.endTime && !reportState.teachers && (
+				<Teachers onEnter={(key, value) => handleReportFormSubmit(key, value)} />
+			)}
+
+			{reportState.teachers && !reportState.support && (
+				<SupportStaff onEnter={(key, value) => handleReportFormSubmit(key, value)} />
+			)}
+
+			{reportState.support && !reportState.attendance && (
+				<Attendance onEnter={(key, value) => handleReportFormSubmit(key, value)} />
 			)}
 		</div>
 	);

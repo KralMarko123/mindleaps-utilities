@@ -2,7 +2,7 @@
 	color: var(--ml-light);
 }
 
-.group-form {
+.badge-form {
 	display: flex;
 	flex-direction: column;
 	gap: 3em;
@@ -22,4 +22,8 @@
 .badge:hover {
 	transform: translateY(-10%);
 	opacity: 0.9;
+}
+
+.report-submit.report-add {
+	right: 3em;
 }

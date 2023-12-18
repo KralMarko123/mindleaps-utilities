@@ -33,13 +33,13 @@ const Group = ({ onEnter }) => {
 				<p className={`report-error${error ? ' show' : ''}`}>Please choose a group</p>
 			</div>
 
-			<div className='groups-container'>
+			<div className='badge-container'>
 				{GROUPS.map((g) => (
 					<Button
-						key={g}
-						text={g}
-						extraClasses={'group-badge'}
-						executeOnClick={() => handleGroupSelect(g)}
+						key={g.name}
+						text={g.name}
+						extraClasses={'badge group-badge'}
+						executeOnClick={() => handleGroupSelect(g.name)}
 					/>
 				))}
 			</div>

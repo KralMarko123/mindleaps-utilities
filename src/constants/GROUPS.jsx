@@ -1,1 +1,6 @@
-export const GROUPS = ['SOS A'];
+export const GROUPS = [
+	{
+		name: 'SOS A',
+		numberOfStudents: 26
+	}
+];

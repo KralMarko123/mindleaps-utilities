@@ -7,18 +7,20 @@ import EndTime from './EndTime';
 import Teachers from './Teachers';
 import SupportStaff from './SupportStaff';
 import Attendance from './Attendance';
+import Missing from './Missing';
 import './ReportGenerator.css';
 
 const ReportGenerator = () => {
 	const [reportState, setReportState] = useState({
-		title: null,
-		date: null,
-		group: null,
-		startTime: null,
-		endTime: null,
-		teachers: null,
-		support: null,
-		attendance: null
+		title: 1,
+		date: 1,
+		group: 1,
+		startTime: 1,
+		endTime: 1,
+		teachers: 1,
+		support: 1,
+		attendance: 1,
+		missing: null
 	});
 
 	const handleReportFormSubmit = (key, value) => {
@@ -58,6 +60,10 @@ const ReportGenerator = () => {
 
 			{reportState.support && !reportState.attendance && (
 				<Attendance onEnter={(key, value) => handleReportFormSubmit(key, value)} />
+			)}
+
+			{reportState.attendance && !reportState.missing && (
+				<Missing onEnter={(key, value) => handleReportFormSubmit(key, value)} />
 			)}
 		</div>
 	);

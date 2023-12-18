@@ -3,6 +3,7 @@ import Title from './Title';
 import DateSelection from './DateSelection';
 import Group from './Group';
 import StartTime from './StartTime';
+import EndTime from './EndTime';
 import './ReportGenerator.css';
 
 const ReportGenerator = () => {
@@ -10,7 +11,8 @@ const ReportGenerator = () => {
 		title: 1,
 		date: 1,
 		group: 1,
-		startTime: null
+		startTime: null,
+		endTime: null
 	});
 
 	const handleReportFormSubmit = (key, value) => {
@@ -34,6 +36,10 @@ const ReportGenerator = () => {
 
 			{reportState.group && !reportState.startTime && (
 				<StartTime onEnter={(key, value) => handleReportFormSubmit(key, value)} />
+			)}
+
+			{reportState.startTime && !reportState.endTime && (
+				<EndTime onEnter={(key, value) => handleReportFormSubmit(key, value)} />
 			)}
 		</div>
 	);

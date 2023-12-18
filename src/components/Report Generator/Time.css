@@ -1,0 +1,73 @@
+.time-form {
+	position: relative;
+	width: 100%;
+}
+
+.start-time {
+	width: 100%;
+	border: none;
+}
+
+.react-time-picker__wrapper {
+	position: relative;
+	border: none;
+}
+
+.react-time-picker__wrapper:after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	display: block;
+	height: 5px;
+	width: 100%;
+
+	background: -webkit-linear-gradient(
+		left,
+		var(--ml-dark) 0%,
+		var(--ml-light) 50%,
+		var(--ml-dark) 100%
+	);
+	border-radius: 10px;
+
+	transition: all 0.5s ease-in-out;
+}
+
+.react-time-picker__inputGroup {
+	border: none;
+	min-width: calc(var(--lg-text) * 2);
+	font-size: var(--lg-text);
+
+	padding: 0.25em 0.25em;
+}
+
+.react-time-picker__inputGroup__input {
+	outline: none;
+	border: none;
+	background-color: transparent;
+}
+
+.react-time-picker__inputGroup__input:focus {
+	outline: none;
+	border: none;
+	background-color: transparent;
+}
+
+.react-time-picker__inputGroup__input:invalid {
+	background-color: rgba(255, 36, 0, 0.25);
+}
+
+.react-time-picker__inputGroup__amPm option {
+	padding: 0.5em;
+
+	outline: none;
+	border: none;
+	border-radius: 10px;
+	background-color: var(--accent);
+
+	color: var(--text-color);
+	font-size: var(--md-text);
+	font-family: var(--secondary-font);
+	text-transform: uppercase;
+
+	cursor: pointer;
+}

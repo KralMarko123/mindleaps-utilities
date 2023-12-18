@@ -40,9 +40,12 @@ const ReportGenerator = ({ onSubmit }) => {
 		newReportState[`${key}`] = value;
 
 		setReportState({ ...newReportState });
+		
 		if (Object.values(reportState).every((v) => v != null)) {
 			onSubmit(reportState);
 		}
+
+		if (key === 'startTime' || key === 'endTime') console.log(value);
 	};
 
 	return (

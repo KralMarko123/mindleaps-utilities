@@ -5,11 +5,11 @@ import Button from '../Buttons/Button';
 import './Group.css';
 
 const Group = ({ onEnter }) => {
-	const [group, setGroup] = useState('');
+	const [group, setGroup] = useState({});
 	const [error, setError] = useState(false);
 
 	const handleSubmit = () => {
-		if (group.length === 0) {
+		if (group.name?.length === 0) {
 			setError(true);
 			return;
 		}
@@ -25,7 +25,7 @@ const Group = ({ onEnter }) => {
 			<div className='report-input'>
 				<span className='report-placeholder active'>Group</span>
 
-				<input type='text' disabled value={group} />
+				<input type='text' disabled value={group.name} />
 
 				<span className={`report-submit`} onClick={() => handleSubmit()}>
 					<TbArrowRight />
@@ -39,7 +39,7 @@ const Group = ({ onEnter }) => {
 						key={g.name}
 						text={g.name}
 						extraClasses={'badge group-badge'}
-						executeOnClick={() => handleGroupSelect(g.name)}
+						executeOnClick={() => handleGroupSelect(g)}
 					/>
 				))}
 			</div>

@@ -3,8 +3,8 @@ export const getCopyableReport = (report) => {
     report.title,
     `Date (dd/mm/yyyy): ${getDateInEuropeanFormat(report.date)}`,
     `Group: ${report.group.name}`,
-    `Start Time: ${getHoursAndMinutes(report.startTime)}`,
-    `End Time: ${getHoursAndMinutes(report.endTime)}`,
+    `Start Time: ${report.startTime}`,
+    `End Time: ${report.endTime}`,
     `Teachers: ${report.teachers.join(', ')}`,
     `Support Staff: ${report.support.length > 0 ? support.join(', ') : 'N/A'}`,
     `Attendance: ${getAttendanceParagraph(report.group, report.attendance, report.missing)}`,
@@ -19,11 +19,11 @@ export const getCopyableReport = (report) => {
   return itemsToConvertToParagraph.join(' \n\n')
 }
 
-export const getHoursAndMinutes = (date) => {
+export const getHoursAndMinutes = (time) => {
 
-  let hours = date.getHours();
-  let minutes = date.getMinutes();
-  const ampm = hours >= 12 ? 'pm' : 'am';
+  let hours = time.getHours();
+  let minutes = time.getMinutes();
+  const ampm = hours >= 12 ? 'PM' : 'AM';
 
   hours = hours % 12;
   hours = hours ? hours : 12; // the hour '0' should be '12'

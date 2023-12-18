@@ -42,7 +42,7 @@ const ExtraNotes = ({ onEnter }) => {
 					Extra Note
 				</span>
 
-				<input type='text' ref={noteRef} maxLength={20} />
+				<input type='text' ref={noteRef} />
 
 				<span className={`report-submit report-add`} onClick={() => handleAdd()}>
 					<TbPlus />

@@ -1,4 +1,34 @@
 .generatedreport {
-  white-space: pre;
-  font-size: var(--md-text);
+	width: 50%;
+	position: relative;
+	padding: 1em;
+
+	border: solid 3px var(--text-color);
+	border-radius: 10px;
+	background-color: rgba(48, 131, 220, 0.75);
+	box-shadow: var(--simple-shadow);
+
+	font-family: var(--secondary-font);
+	font-size: var(--md-text);
+	white-space: pre;
+
+	line-height: 1;
+	letter-spacing: 1px;
+}
+
+.copy-report {
+	position: absolute;
+	top: 1em;
+	right: 1em;
+
+	background-color: var(--main-dark);
+	padding: 1em;
+	border-radius: 10px;
+	box-shadow: var(--small-shadow);
+
+	cursor: pointer;
+}
+
+.copy-report:hover {
+	opacity: 0.9;
 }

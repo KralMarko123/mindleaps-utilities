@@ -13,5 +13,5 @@ export const TEMPLATE_REPORT = {
 	muscle: 'Pronator',
 	technique: 'Cabbage Patch',
 	notes: ['Add to the codebase asap', 'Remember to commit & push'],
-	actionItems: ['Do better', 'Be better']
+	actionItems: []
 };

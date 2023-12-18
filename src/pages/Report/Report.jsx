@@ -3,6 +3,7 @@ import BackButton from '../../components/Buttons/BackButton';
 import ReportGenerator from '../../components/Report Generator/ReportGenerator';
 import { getCopyableReport } from '../../util/HELPER_FUNCTIONS';
 import { TEMPLATE_REPORT } from '../../constants/MISC';
+import { TbCopy } from 'react-icons/tb';
 import './Report.css';
 import '../page.css';
 
@@ -18,7 +19,17 @@ const Report = () => {
 			{!generatedReport ? (
 				<ReportGenerator onSubmit={(report) => setGeneratedReport(report)} />
 			) : (
-				<div className='generatedreport'>{getCopyableReport(generatedReport)} </div>
+				<div className='generatedreport'>
+					{getCopyableReport(generatedReport)}
+					<span
+						className='copy-report'
+						onClick={() => {
+							navigator.clipboard.writeText(getCopyableReport(generatedReport));
+						}}
+					>
+						Copy <TbCopy />
+					</span>
+				</div>
 			)}
 		</div>
 	);

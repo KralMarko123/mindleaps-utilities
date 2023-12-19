@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/mindleaps-utilities/static/css/main.63908b76.css",
-    "main.js": "/mindleaps-utilities/static/js/main.f1a0a305.js",
+    "main.js": "/mindleaps-utilities/static/js/main.43198c37.js",
     "index.html": "/mindleaps-utilities/index.html",
     "main.63908b76.css.map": "/mindleaps-utilities/static/css/main.63908b76.css.map",
-    "main.f1a0a305.js.map": "/mindleaps-utilities/static/js/main.f1a0a305.js.map"
+    "main.43198c37.js.map": "/mindleaps-utilities/static/js/main.43198c37.js.map"
   },
   "entrypoints": [
     "static/css/main.63908b76.css",
-    "static/js/main.f1a0a305.js"
+    "static/js/main.43198c37.js"
   ]
 }

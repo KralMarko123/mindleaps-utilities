@@ -8,9 +8,7 @@ import './Report.css';
 import '../page.css';
 
 const Report = () => {
-	const [generatedReport, setGeneratedReport] = useState({
-		isCompleted: false
-	});
+	const [generatedReport, setGeneratedReport] = useState(TEMPLATE_REPORT);
 	return (
 		<div className='report page'>
 			<BackButton />

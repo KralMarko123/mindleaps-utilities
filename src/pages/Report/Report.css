@@ -10,7 +10,7 @@
 
 	font-family: var(--secondary-font);
 	font-size: var(--md-text);
-	white-space: pre;
+	white-space: pre-wrap;
 
 	line-height: 1;
 	letter-spacing: 1px;

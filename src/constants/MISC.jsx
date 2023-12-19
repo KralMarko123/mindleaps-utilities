@@ -12,6 +12,11 @@ export const TEMPLATE_REPORT = {
 	skill: 'Grit',
 	muscle: 'Pronator',
 	technique: 'Cabbage Patch',
-	notes: ['Add to the codebase asap', 'Remember to commit & push'],
-	actionItems: []
+	notes: [
+		'Add to the codebase asap',
+		'Remember to commit & push',
+		'Student Philip had a mental breakdown during the class and neccessary steps had to be taken ( he was switched off )'
+	],
+	actionItems: [],
+	isCompleted: true
 };

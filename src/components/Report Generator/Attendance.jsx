@@ -9,7 +9,7 @@ const Attendance = ({ onEnter }) => {
 	const handleInputChange = (e) => {
 		const newAttendance = e.currentTarget.value;
 
-		setAttendance((prev) => newAttendance);
+		setAttendance(newAttendance);
 	};
 
 	const handleSubmit = () => {
@@ -19,7 +19,7 @@ const Attendance = ({ onEnter }) => {
 		}
 
 		setError(false);
-		onEnter('attendance', attendance);
+		onEnter(attendance);
 	};
 
 	return (

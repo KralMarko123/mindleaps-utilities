@@ -3,10 +3,10 @@ export const getCopyableReport = (report) => {
     report.title,
     `Date (dd/mm/yyyy): ${getDateInEuropeanFormat(report.date)}`,
     `Group: ${report.group.name}`,
-    `Start Time: ${report.startTime}`,
-    `End Time: ${report.endTime}`,
+    `Start Time: ${getHoursAndMinutes(report.startTime)}`,
+    `End Time: ${getHoursAndMinutes(report.endTime)}`,
     `Teachers: ${report.teachers.join(', ')}`,
-    `Support Staff: ${report.support.length > 0 ? support.join(', ') : 'N/A'}`,
+    `Support Staff: ${report.support?.length > 0 ? support.join(', ') : 'N/A'}`,
     `Attendance: ${getAttendanceParagraph(report.group, report.attendance, report.missing)}`,
     `Subject: ${report.subject}`,
     `Skill: ${report.skill}`,
@@ -20,16 +20,17 @@ export const getCopyableReport = (report) => {
 }
 
 export const getHoursAndMinutes = (time) => {
+  if (typeof (time) === 'string') return time
 
   let hours = time.getHours();
   let minutes = time.getMinutes();
-  const ampm = hours >= 12 ? 'PM' : 'AM';
+  const amOrPm = hours >= 12 ? 'PM' : 'AM';
 
   hours = hours % 12;
   hours = hours ? hours : 12; // the hour '0' should be '12'
   minutes = minutes < 10 ? '0' + minutes : minutes;
 
-  return `${hours}:${minutes} ${ampm}`;
+  return `${hours}:${minutes} ${amOrPm}`;
 }
 
 export const getDateInEuropeanFormat = (date) => {
@@ -37,9 +38,13 @@ export const getDateInEuropeanFormat = (date) => {
 }
 
 export const getAttendanceParagraph = (group, attendance, missing) => {
-  return `${attendance}/${group.numberOfStudents} ( ${missing.map(s => `${s.name}${s.reason ? ` - ${s.reason}` : ''}`).join(', ')} )`
+  if (missing?.length > 0) return `${attendance}/${group.numberOfStudents} ( ${missing?.map(s => `${s.name}${s.reason ? ` - ${s.reason}` : ''}`).join(', ')} )`
+  else return `${attendance}/${group.numberOfStudents}`
 }
 
 export const getListFromItems = (list) => {
-  return `${list.length > 0 ? list.map(l => `\n - ${l}`).join('') : '\n - N/A'}`
+  console.log(list)
+
+  if (list.length > 0) return list.map(l => `\n - ${l}`).join('');
+  else return '\n - N/A'
 }

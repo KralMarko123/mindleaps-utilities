@@ -16,7 +16,7 @@ const Teachers = ({ onEnter }) => {
 		}
 
 		setError(false);
-		onEnter('teachers', teachers);
+		onEnter(teachers);
 	};
 
 	const handleAdd = () => {

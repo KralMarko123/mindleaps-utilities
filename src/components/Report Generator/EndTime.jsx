@@ -9,7 +9,7 @@ const EndTime = ({ onEnter }) => {
 	const [endTime, setEndTime] = useState(new Date());
 
 	const handleSubmit = () => {
-		onEnter('endTime', endTime);
+		onEnter(endTime);
 	};
 
 	return (

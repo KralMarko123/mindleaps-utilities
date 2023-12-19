@@ -13,7 +13,7 @@ const Missing = ({ onEnter }) => {
 	const [missing, setMissing] = useState([]);
 
 	const handleSubmit = () => {
-		onEnter('missing', missing);
+		onEnter(missing);
 	};
 
 	const handleAdd = () => {

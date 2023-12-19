@@ -14,7 +14,7 @@ const Skill = ({ onEnter }) => {
 		}
 
 		setError(false);
-		onEnter('skill', skill);
+		onEnter(skill);
 	};
 
 	const handleSkillSelect = (newSkill) => setSkill(newSkill);

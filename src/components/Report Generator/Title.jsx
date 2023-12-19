@@ -9,7 +9,7 @@ const Title = ({ onEnter }) => {
 	const handleInputChange = (e) => {
 		const newTitle = e.currentTarget.value;
 
-		setTitle((prev) => newTitle);
+		setTitle(newTitle);
 	};
 
 	const handleSubmit = () => {
@@ -19,7 +19,7 @@ const Title = ({ onEnter }) => {
 		}
 
 		setError(false);
-		onEnter('title', title);
+		onEnter(title);
 	};
 
 	return (

@@ -9,7 +9,7 @@ const Muscle = ({ onEnter }) => {
 	const handleInputChange = (e) => {
 		const newMuscle = e.currentTarget.value;
 
-		setMuscle((prev) => newMuscle);
+		setMuscle(newMuscle);
 	};
 
 	const handleSubmit = () => {
@@ -19,7 +19,7 @@ const Muscle = ({ onEnter }) => {
 		}
 
 		setError(false);
-		onEnter('muscle', muscle);
+		onEnter(muscle);
 	};
 
 	return (

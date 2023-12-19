@@ -8,26 +8,24 @@ const DateSelection = ({ onEnter }) => {
 	const [date, setDate] = useState(new Date());
 
 	const handleSubmit = () => {
-		onEnter('date', date);
+		onEnter(date);
 	};
 
 	return (
-		<>
-			<div className='date-form'>
-				<span className='report-placeholder active'>Date</span>
+		<div className='date-form'>
+			<span className='report-placeholder active'>Date</span>
 
-				<DatePicker
-					selected={date}
-					onChange={(newDate) => setDate(newDate)}
-					minDate={new Date()}
-					className='date-selection__input'
-				/>
+			<DatePicker
+				selected={date}
+				onChange={(newDate) => setDate(newDate)}
+				minDate={new Date()}
+				className='date-selection__input'
+			/>
 
-				<span className={`report-submit`} onClick={() => handleSubmit()}>
-					<TbArrowRight />
-				</span>
-			</div>
-		</>
+			<span className={`report-submit`} onClick={() => handleSubmit()}>
+				<TbArrowRight />
+			</span>
+		</div>
 	);
 };
 

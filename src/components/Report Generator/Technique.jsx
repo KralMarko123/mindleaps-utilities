@@ -9,7 +9,7 @@ const Technique = ({ onEnter }) => {
 	const handleInputChange = (e) => {
 		const newTechnique = e.currentTarget.value;
 
-		setTechnique((prev) => newTechnique);
+		setTechnique(newTechnique);
 	};
 
 	const handleSubmit = () => {
@@ -19,7 +19,7 @@ const Technique = ({ onEnter }) => {
 		}
 
 		setError(false);
-		onEnter('technique', technique);
+		onEnter(technique);
 	};
 
 	return (

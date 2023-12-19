@@ -5,20 +5,25 @@ import Button from '../Buttons/Button';
 import './Group.css';
 
 const Group = ({ onEnter }) => {
-	const [group, setGroup] = useState({});
+	const [group, setGroup] = useState({
+		name: '',
+		numberOfStudents: NaN
+	});
 	const [error, setError] = useState(false);
 
 	const handleSubmit = () => {
-		if (group.name?.length === 0) {
+		if (group.name.length === 0) {
 			setError(true);
 			return;
 		}
 
 		setError(false);
-		onEnter('group', group);
+		onEnter(group);
 	};
 
-	const handleGroupSelect = (newGroup) => setGroup(newGroup);
+	const handleGroupSelect = (newGroup) => {
+		setGroup({ ...newGroup });
+	};
 
 	return (
 		<div className='group-form'>

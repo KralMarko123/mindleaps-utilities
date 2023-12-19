@@ -18,95 +18,108 @@ import './ReportGenerator.css';
 
 const ReportGenerator = ({ onSubmit }) => {
 	const [reportState, setReportState] = useState({
-		title: null,
+		title: '',
 		date: null,
-		group: null,
+		group: [],
 		startTime: null,
 		endTime: null,
-		teachers: null,
-		support: null,
+		teachers: [],
+		support: [],
 		attendance: null,
-		missing: null,
-		subject: null,
-		skill: null,
-		muscle: null,
-		technique: null,
-		notes: null,
-		actionItems: null
+		missing: [],
+		subject: '',
+		skill: '',
+		muscle: '',
+		technique: '',
+		notes: [],
+		actionItems: [],
+		show: 'title',
+		isCompleted: false
 	});
 
-	const handleReportFormSubmit = (key, value) => {
+	const handleReportFormSubmit = (key, value, showNext, shouldComplete = false) => {
 		let newReportState = reportState;
+
 		newReportState[`${key}`] = value;
-
+		newReportState.show = showNext;
+		newReportState.isCompleted = shouldComplete;
 		setReportState({ ...newReportState });
-		
-		if (Object.values(reportState).every((v) => v != null)) {
-			onSubmit(reportState);
-		}
 
-		if (key === 'startTime' || key === 'endTime') console.log(value);
+		if (shouldComplete) onSubmit(reportState);
 	};
 
 	return (
 		<div className='report-form'>
-			{!reportState.title && <Title onEnter={(key, value) => handleReportFormSubmit(key, value)} />}
-
-			{reportState.title && !reportState.date && (
-				<DateSelection onEnter={(key, value) => handleReportFormSubmit(key, value)} />
-			)}
-
-			{reportState.date && !reportState.group && (
-				<Group onEnter={(key, value) => handleReportFormSubmit(key, value)} />
-			)}
-
-			{reportState.group && !reportState.startTime && (
-				<StartTime onEnter={(key, value) => handleReportFormSubmit(key, value)} />
-			)}
-
-			{reportState.startTime && !reportState.endTime && (
-				<EndTime onEnter={(key, value) => handleReportFormSubmit(key, value)} />
-			)}
-
-			{reportState.endTime && !reportState.teachers && (
-				<Teachers onEnter={(key, value) => handleReportFormSubmit(key, value)} />
-			)}
-
-			{reportState.teachers && !reportState.support && (
-				<SupportStaff onEnter={(key, value) => handleReportFormSubmit(key, value)} />
-			)}
-
-			{reportState.support && !reportState.attendance && (
-				<Attendance onEnter={(key, value) => handleReportFormSubmit(key, value)} />
-			)}
-
-			{reportState.attendance && !reportState.missing && (
-				<Missing onEnter={(key, value) => handleReportFormSubmit(key, value)} />
-			)}
-
-			{reportState.missing && !reportState.subject && (
-				<Subject onEnter={(key, value) => handleReportFormSubmit(key, value)} />
-			)}
-
-			{reportState.subject && !reportState.skill && (
-				<Skill onEnter={(key, value) => handleReportFormSubmit(key, value)} />
-			)}
-
-			{reportState.skill && !reportState.muscle && (
-				<Muscle onEnter={(key, value) => handleReportFormSubmit(key, value)} />
-			)}
-
-			{reportState.muscle && !reportState.technique && (
-				<Technique onEnter={(key, value) => handleReportFormSubmit(key, value)} />
-			)}
-
-			{reportState.technique && !reportState.notes && (
-				<ExtraNotes onEnter={(key, value) => handleReportFormSubmit(key, value)} />
-			)}
-
-			{reportState.notes && !reportState.actionItems && (
-				<ActionItems onEnter={(key, value) => handleReportFormSubmit(key, value)} />
-			)}
+			{(() => {
+				switch (reportState.show) {
+					case 'title':
+						return <Title onEnter={(value) => handleReportFormSubmit('title', value, 'date')} />;
+					case 'date':
+						return (
+							<DateSelection onEnter={(value) => handleReportFormSubmit('date', value, 'group')} />
+						);
+					case 'group':
+						return (
+							<Group onEnter={(value) => handleReportFormSubmit('group', value, 'startTime')} />
+						);
+					case 'startTime':
+						return (
+							<StartTime
+								onEnter={(value) => handleReportFormSubmit('startTime', value, 'endTime')}
+							/>
+						);
+					case 'endTime':
+						return (
+							<EndTime onEnter={(value) => handleReportFormSubmit('endTime', value, 'teachers')} />
+						);
+					case 'teachers':
+						return (
+							<Teachers onEnter={(value) => handleReportFormSubmit('teachers', value, 'support')} />
+						);
+					case 'support':
+						return (
+							<SupportStaff
+								onEnter={(value) => handleReportFormSubmit('support', value, 'attendance')}
+							/>
+						);
+					case 'attendance':
+						return (
+							<Attendance
+								onEnter={(value) => handleReportFormSubmit('attendance', value, 'missing')}
+							/>
+						);
+					case 'missing':
+						return (
+							<Missing onEnter={(value) => handleReportFormSubmit('missing', value, 'subject')} />
+						);
+					case 'subject':
+						return (
+							<Subject onEnter={(value) => handleReportFormSubmit('subject', value, 'skill')} />
+						);
+					case 'skill':
+						return <Skill onEnter={(value) => handleReportFormSubmit('skill', value, 'muscle')} />;
+					case 'muscle':
+						return (
+							<Muscle onEnter={(value) => handleReportFormSubmit('muscle', value, 'technique')} />
+						);
+					case 'technique':
+						return (
+							<Technique onEnter={(value) => handleReportFormSubmit('technique', value, 'notes')} />
+						);
+					case 'notes':
+						return (
+							<ExtraNotes
+								onEnter={(value) => handleReportFormSubmit('notes', value, 'actionItems')}
+							/>
+						);
+					case 'actionItems':
+						return (
+							<ActionItems
+								onEnter={(value) => handleReportFormSubmit('actionItems', value, '', true)}
+							/>
+						);
+				}
+			})()}
 		</div>
 	);
 };

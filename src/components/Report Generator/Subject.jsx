@@ -14,7 +14,7 @@ const Subject = ({ onEnter }) => {
 		}
 
 		setError(false);
-		onEnter('subject', subject);
+		onEnter(subject);
 	};
 
 	const handleSubjectSelect = (newSubject) => setSubject(newSubject);

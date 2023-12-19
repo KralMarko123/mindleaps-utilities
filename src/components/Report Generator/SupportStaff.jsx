@@ -10,7 +10,7 @@ const SupportStaff = ({ onEnter }) => {
 	const [error, setError] = useState(false);
 
 	const handleSubmit = () => {
-		onEnter('support', support);
+		onEnter(support);
 	};
 
 	const handleAdd = () => {

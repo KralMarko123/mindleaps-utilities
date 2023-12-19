@@ -11,7 +11,7 @@ const ActionItems = ({ onEnter }) => {
 	const [actionItems, setActionItems] = useState([]);
 
 	const handleSubmit = () => {
-		onEnter('actionItems', actionItems);
+		onEnter(actionItems);
 	};
 
 	const handleAdd = () => {

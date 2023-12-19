@@ -11,7 +11,7 @@ const ExtraNotes = ({ onEnter }) => {
 	const [notes, setNotes] = useState([]);
 
 	const handleSubmit = () => {
-		onEnter('notes', notes);
+		onEnter(notes);
 	};
 
 	const handleAdd = () => {

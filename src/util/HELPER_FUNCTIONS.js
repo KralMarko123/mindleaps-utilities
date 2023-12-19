@@ -6,7 +6,7 @@ export const getCopyableReport = (report) => {
     `Start Time: ${getHoursAndMinutes(report.startTime)}`,
     `End Time: ${getHoursAndMinutes(report.endTime)}`,
     `Teachers: ${report.teachers.join(', ')}`,
-    `Support Staff: ${report.support?.length > 0 ? support.join(', ') : 'N/A'}`,
+    `Support Staff: ${report.support.length > 0 ? support.join(', ') : 'N/A'}`,
     `Attendance: ${getAttendanceParagraph(report.group, report.attendance, report.missing)}`,
     `Subject: ${report.subject}`,
     `Skill: ${report.skill}`,

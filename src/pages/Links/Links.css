@@ -11,4 +11,15 @@
 	grid-gap: 2em;
 }
 
+@media (max-width: 768px) {
+	.page {
+		justify-content: center;
+	}
 
+	.links-dashboard {
+		width: 100%;
+
+		grid-template-columns: 1fr 1fr;
+		grid-gap: 1em;
+	}
+}

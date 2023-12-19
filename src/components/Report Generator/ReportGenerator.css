@@ -101,3 +101,33 @@
 .report-error.show {
 	opacity: 0.75;
 }
+
+@media (max-width: 768px) {
+	.report-form {
+		margin-top: 50px;
+		width: 100%;
+	}
+
+	.report-input:after {
+		height: 3px;
+	}
+
+	.report-input input {
+		font-size: var(--md-text);
+
+		padding: 0.5em 0.5em;
+	}
+
+	.report-submit {
+		width: 30px;
+		height: 30px;
+
+		font-size: var(--md-text);
+		z-index: 2;
+	}
+
+	.report-error {
+		left: 0.5em;
+		bottom: -80%;
+	}
+}

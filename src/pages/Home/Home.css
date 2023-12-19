@@ -17,3 +17,15 @@
 .menu-container .button:hover {
 	transform: translateX(-50px);
 }
+
+@media (max-width: 768px) {
+	.menu-container {
+		width: 100%;
+
+		padding: 1em;
+	}
+
+	.menu-container .button:hover {
+		transform: translateX(0);
+	}
+}

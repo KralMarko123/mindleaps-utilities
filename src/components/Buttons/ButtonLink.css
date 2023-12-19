@@ -51,3 +51,33 @@
 
 	transform: translateX(10%);
 }
+
+@media (max-width: 768px) {
+	.link-container {
+		padding: 1em;
+	}
+
+	.link-container:hover {
+		opacity: 1;
+		transform: scale(1);
+	}
+
+	.link-icon {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 20%;
+	}
+
+	.link-icon svg {
+		font-size: var(--md-text);
+	}
+
+	.link-title {
+		padding: 1em 0.5em;
+
+		font-size: var(--s-text);
+		text-align: end;
+		transform: translateX(10%);
+	}
+}

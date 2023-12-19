@@ -32,3 +32,13 @@
 .copy-report:hover {
 	opacity: 0.9;
 }
+
+@media (max-width: 768px) {
+	.generatedreport {
+		width: 100%;
+	}
+
+	.copy-report:hover {
+		opacity: 1;
+	}
+}

@@ -12,7 +12,7 @@
 }
 
 .desc {
-	font-size: 0.85rem;
+	font-size: var(--s-text);
 	opacity: 0.5;
 	text-transform: uppercase;
 	letter-spacing: 2px;
@@ -21,4 +21,16 @@
 	background-color: black;
 	border-radius: 5px;
 	box-shadow: var(--small-shadow);
+}
+
+@media (max-width: 768px) {
+	.title {
+		text-align: center;
+	}
+
+	.desc {
+		padding: 1em;
+		font-size: var(--xs-text);
+		text-align: justify;
+	}
 }

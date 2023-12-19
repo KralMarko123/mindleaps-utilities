@@ -17,8 +17,17 @@
 	--xl-text: 3rem;
 	--lg-text: 2rem;
 	--md-text: 1rem;
+	--s-text: 0.85rem;
+	--xs-text: 0.65rem;
 
 	/** UTILITY **/
 	--simple-shadow: 5px 5px 5px rgba(25, 19, 8, 0.5);
 	--small-shadow: 3px 3px 3px 0px rgba(25, 19, 8, 0.5);
+}
+
+@media (max-width: 768px) {
+	:root {
+		/** TEXT **/
+		--base-font-size: 16px;
+	}
 }

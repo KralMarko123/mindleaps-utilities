@@ -19,10 +19,10 @@ import './ReportGenerator.css';
 const ReportGenerator = ({ onSubmit }) => {
 	const [reportState, setReportState] = useState({
 		title: '',
-		date: null,
+		date: new Date(),
 		group: [],
-		startTime: null,
-		endTime: null,
+		startTime: new Date(),
+		endTime: new Date(),
 		teachers: [],
 		support: [],
 		attendance: null,

@@ -6,7 +6,7 @@ export const getCopyableReport = (report) => {
     `Start Time: ${getHoursAndMinutes(report.startTime)}`,
     `End Time: ${getHoursAndMinutes(report.endTime)}`,
     `Teachers: ${report.teachers.join(', ')}`,
-    `Support Staff: ${report.support.length > 0 ? support.join(', ') : 'N/A'}`,
+    `Support Staff: ${report.support.length > 0 ? report.support.join(', ') : 'N/A'}`,
     `Attendance: ${getAttendanceParagraph(report.group, report.attendance, report.missing)}`,
     `Subject: ${report.subject}`,
     `Skill: ${report.skill}`,
@@ -38,13 +38,11 @@ export const getDateInEuropeanFormat = (date) => {
 }
 
 export const getAttendanceParagraph = (group, attendance, missing) => {
-  if (missing?.length > 0) return `${attendance}/${group.numberOfStudents} ( ${missing?.map(s => `${s.name}${s.reason ? ` - ${s.reason}` : ''}`).join(', ')} )`
+  if (missing.length > 0) return `${attendance}/${group.numberOfStudents} ( ${missing.map(s => `${s.name}${s.reason ? ` - ${s.reason}` : ''}`).join(', ')} )`
   else return `${attendance}/${group.numberOfStudents}`
 }
 
 export const getListFromItems = (list) => {
-  console.log(list)
-
   if (list.length > 0) return list.map(l => `\n - ${l}`).join('');
   else return '\n - N/A'
 }

@@ -2,13 +2,14 @@ import React, { useState } from 'react';
 import BackButton from '../../components/Buttons/BackButton';
 import ReportGenerator from '../../components/Report Generator/ReportGenerator';
 import { getCopyableReport } from '../../util/HELPER_FUNCTIONS';
-import { TEMPLATE_REPORT } from '../../constants/MISC';
 import { TbCopy } from 'react-icons/tb';
 import './Report.css';
 import '../page.css';
 
 const Report = () => {
-	const [generatedReport, setGeneratedReport] = useState(TEMPLATE_REPORT);
+	const [generatedReport, setGeneratedReport] = useState({
+		isCompleted: false
+	});
 	return (
 		<div className='report page'>
 			<BackButton />

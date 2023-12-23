@@ -22,6 +22,10 @@ const Technique = ({ onEnter }) => {
 		onEnter(technique);
 	};
 
+	const handleKeyDown = (e) => {
+		if (e.code === 'Enter') handleSubmit();
+	};
+
 	return (
 		<div className='technique-form'>
 			<div
@@ -32,8 +36,19 @@ const Technique = ({ onEnter }) => {
 				<span className={`report-placeholder${technique.length > 0 ? ' active' : ''}`}>
 					Technique
 				</span>
-				<input type='text' onChange={(e) => handleInputChange(e)} />
-				<span className={`report-submit`} onClick={() => handleSubmit()}>
+				<input
+					type='text'
+					onChange={(e) => handleInputChange(e)}
+					autoFocus
+					tabIndex={0}
+					onKeyDown={(e) => handleKeyDown(e)}
+				/>
+				<span
+					className={`report-submit`}
+					onClick={() => handleSubmit()}
+					tabIndex={0}
+					onKeyDown={(e) => handleKeyDown(e)}
+				>
 					<TbArrowRight />
 				</span>
 				<p className={`report-error${error ? ' show' : ''}`}>Please enter a technique</p>

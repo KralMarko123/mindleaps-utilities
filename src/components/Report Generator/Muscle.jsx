@@ -30,8 +30,19 @@ const Muscle = ({ onEnter }) => {
 				onBlur={() => setIsOpen(false)}
 			>
 				<span className={`report-placeholder${muscle.length > 0 ? ' active' : ''}`}>Muscle</span>
-				<input type='text' onChange={(e) => handleInputChange(e)} />
-				<span className={`report-submit`} onClick={() => handleSubmit()}>
+				<input
+					type='text'
+					onChange={(e) => handleInputChange(e)}
+					autoFocus
+					tabIndex={0}
+					onKeyDown={(e) => handleKeyDown(e)}
+				/>
+				<span
+					className={`report-submit`}
+					onClick={() => handleSubmit()}
+					tabIndex={0}
+					onKeyDown={(e) => handleKeyDown(e)}
+				>
 					<TbArrowRight />
 				</span>
 				<p className={`report-error${error ? ' show' : ''}`}>Please enter a muscle</p>

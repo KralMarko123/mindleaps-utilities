@@ -25,14 +25,28 @@ const Group = ({ onEnter }) => {
 		setGroup({ ...newGroup });
 	};
 
+	const handleKeyDown = (e) => {
+		if (e.code === 'Enter') handleSubmit();
+	};
+
 	return (
 		<div className='group-form'>
 			<div className='report-input'>
 				<span className='report-placeholder active'>Group</span>
 
-				<input type='text' disabled value={group.name} />
+				<input
+					type='text'
+					disabled
+					value={group.name}
+					placeholder='Select one of the options below'
+				/>
 
-				<span className={`report-submit`} onClick={() => handleSubmit()}>
+				<span
+					className={`report-submit`}
+					onClick={() => handleSubmit()}
+					tabIndex={0}
+					onKeyDown={(e) => handleKeyDown(e)}
+				>
 					<TbArrowRight />
 				</span>
 				<p className={`report-error${error ? ' show' : ''}`}>Please choose a group</p>

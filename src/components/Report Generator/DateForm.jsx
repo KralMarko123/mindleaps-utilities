@@ -11,6 +11,10 @@ const DateForm = ({ onEnter }) => {
 		onEnter(date);
 	};
 
+	const handleKeyDown = (e) => {
+		if (e.code === 'Enter') handleSubmit();
+	};
+
 	return (
 		<div className='report-form'>
 			<span className='report-placeholder active'>Date</span>
@@ -20,9 +24,17 @@ const DateForm = ({ onEnter }) => {
 				onChange={(newDate) => setDate(newDate)}
 				minDate={new Date()}
 				className='date-selection__input'
+				autoFocus
+				tabIndex={0}
+				onKeyDown={(e) => handleKeyDown(e)}
 			/>
 
-			<span className={`report-submit`} onClick={() => handleSubmit()}>
+			<span
+				className={`report-submit`}
+				onClick={() => handleSubmit()}
+				tabIndex={0}
+				onKeyDown={(e) => handleKeyDown(e)}
+			>
 				<TbArrowRight />
 			</span>
 		</div>

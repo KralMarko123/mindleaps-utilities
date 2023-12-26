@@ -73,7 +73,7 @@
 	height: 50px;
 	border: solid 2px;
 	border-radius: 50%;
-
+	outline: none;
 	font-size: var(--lg-text);
 
 	display: flex;
@@ -86,6 +86,11 @@
 }
 
 .report-submit:hover {
+	border-color: var(--ml-light);
+	color: var(--ml-light);
+}
+
+.report-submit:focus {
 	border-color: var(--ml-light);
 	color: var(--ml-light);
 }

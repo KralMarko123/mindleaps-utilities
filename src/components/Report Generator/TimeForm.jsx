@@ -3,28 +3,28 @@ import { TbArrowRight } from 'react-icons/tb';
 import TimePicker from 'react-time-picker';
 import 'react-time-picker/dist/TimePicker.css';
 import 'react-clock/dist/Clock.css';
-import './Time.css';
+import './TimeForm.css';
 
-const StartTime = ({ onEnter }) => {
-	const [startTime, setStartTime] = useState(new Date());
+const TimeForm = ({ onEnter, placeholder }) => {
+	const [time, setTime] = useState(new Date());
 
 	const handleSubmit = () => {
-		onEnter(startTime);
+		onEnter(time);
 	};
 
 	return (
-		<div className='time-form'>
-			<span className='report-placeholder active'>Start Time</span>
+		<div className='report-form time-form'>
+			<span className='report-placeholder active'>{placeholder}</span>
 
 			<TimePicker
 				disableClock={true}
 				hourPlaceholder='HH'
 				minutePlaceholder='mm'
 				maxDetail='minute'
-				className={'start-time'}
+				className={'input-time'}
 				clearIcon={null}
-				value={startTime}
-				onChange={(newTime) => setStartTime(newTime)}
+				value={time}
+				onChange={(newTime) => setTime(newTime)}
 			/>
 
 			<span className={`report-submit`} onClick={() => handleSubmit()}>
@@ -34,4 +34,4 @@ const StartTime = ({ onEnter }) => {
 	);
 };
 
-export default StartTime;
+export default TimeForm;

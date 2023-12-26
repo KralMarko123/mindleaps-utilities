@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { TbArrowRight } from 'react-icons/tb';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-import './DateSelection.css';
+import './DateForm.css';
 
-const DateSelection = ({ onEnter }) => {
+const DateForm = ({ onEnter }) => {
 	const [date, setDate] = useState(new Date());
 
 	const handleSubmit = () => {
@@ -12,7 +12,7 @@ const DateSelection = ({ onEnter }) => {
 	};
 
 	return (
-		<div className='date-form'>
+		<div className='report-form'>
 			<span className='report-placeholder active'>Date</span>
 
 			<DatePicker
@@ -29,4 +29,4 @@ const DateSelection = ({ onEnter }) => {
 	);
 };
 
-export default DateSelection;
+export default DateForm;

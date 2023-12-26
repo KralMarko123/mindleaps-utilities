@@ -1,10 +1,12 @@
 .report-form {
+	position: relative;
 	margin-top: 100px;
 	width: 50%;
 }
 
 .report-input {
 	position: relative;
+	width: 100%;
 }
 
 .report-input:after {
@@ -33,6 +35,7 @@
 
 	color: var(--text-color);
 	font-size: var(--lg-text);
+	text-transform: capitalize;
 
 	opacity: 0.75;
 	transition: all 0.5s ease-in-out;

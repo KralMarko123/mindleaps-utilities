@@ -1,8 +1,8 @@
-.actionitem-container {
+.list-badge-container {
 	flex-direction: column;
 }
 
-.actionitem-badge {
+.list-badge {
 	width: 100%;
 	font-size: var(--md-text);
 	text-align: start;

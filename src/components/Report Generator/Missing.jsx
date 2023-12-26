@@ -1,7 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { TbArrowRight, TbPlus } from 'react-icons/tb';
 import Button from '../Buttons/Button';
-import './FormWithBadges.css';
 import './Missing.css';
 
 const Missing = ({ onEnter }) => {
@@ -41,7 +40,7 @@ const Missing = ({ onEnter }) => {
 	};
 
 	return (
-		<div className='badge-form missing-form'>
+		<div className='report-form badge-form missing-form'>
 			<div
 				className={`report-input${isOpen ? ' open' : ''}`}
 				onFocus={() => setIsOpen(true)}
